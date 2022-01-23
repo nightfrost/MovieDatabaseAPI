@@ -4,8 +4,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import javax.validation.constraints.*;
-
 import java.util.Date;
 
 @Entity
@@ -21,7 +19,7 @@ public class Movie {
 	private Long movie_id;
 	
 	@Column(unique = true, nullable = false)
-	private String title;
+	private String movieTitle;
 	
 	@Basic
 	private Long runtime;
@@ -51,7 +49,6 @@ public class Movie {
 	@Basic
 	private String trailer_uri;
 
-
 	/*
 	 * Getters & Setters.
 	 */
@@ -64,12 +61,12 @@ public class Movie {
 		this.movie_id = movie_id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getMovieTitle() {
+		return movieTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setMovieTitle(String movieTitle) {
+		this.movieTitle = movieTitle;
 	}
 
 	public Long getRuntime() {

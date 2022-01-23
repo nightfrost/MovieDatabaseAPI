@@ -3,13 +3,12 @@ package com.movies.moviedatabaseapi.models;
 import java.util.Set;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 import java.util.Date;
 
 @Entity
-@Table(name = "user")
+@Table(name = "_user")
 public class User {
 	
 	/*
@@ -21,16 +20,13 @@ public class User {
 	private Long user_id;
 	
 	@Column(unique = true, nullable = false)
-	@Size(min=4,max=15)
 	private String username;
 	
 	@Basic
-	@NotNull
-	@Size(min=12,max=25)
 	private String password;
 	
 	@Column(unique = true, nullable = false)
-	private String email;
+	private String userEmail;
 	
 	//ElementCollection + CollectionTable will create and link to a new table, holding liked movies values
 	@ElementCollection
@@ -39,14 +35,12 @@ public class User {
 	
 	@Basic
 	@Temporal(TemporalType.DATE)
-	@NotNull
 	private Date created_at;
-
 
 	/*
 	 * Getters & Setters.
 	 */
-	
+
 	public Long getUser_id() {
 		return user_id;
 	}
@@ -71,12 +65,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public Set<Long> getLiked_movies() {

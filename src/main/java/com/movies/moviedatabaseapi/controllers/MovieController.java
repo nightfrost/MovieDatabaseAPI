@@ -4,16 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.movies.moviedatabaseapi.models.Movie;
 import com.movies.moviedatabaseapi.services.MovieService;
 
-import static com.movies.moviedatabaseapi.controllers.HelperController.BASE_URI_V1;
-
-@RestController
-@RequestMapping(value = BASE_URI_V1 + "/movies")
+@Controller
+@RequestMapping(value = "api/v1/movies")
 public class MovieController {
 	
 	@Autowired
@@ -29,14 +28,18 @@ public class MovieController {
 		return movieService.getMovieById(id);
 	}
 	
-	@PostMapping
+	@PostMapping()
 	public ResponseEntity<Movie> addMovie(@Validated @RequestBody Movie movie) {
 		return movieService.addMovie(movie);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Movie> updateMovie(@Validated @RequestBody Movie movie) {
-		return movieService.updateMovie(movie);
+	public ResponseEntity<Movie> updateMovie(@PathVariable(value = "id") Long id, @Validated @RequestBody Movie movie) {
+		return movieService.updateMovie(id, movie);
 	}
 	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Movie> deleteMovie(@PathVariable(value = "id") Long id) {
+		return movieService.deleteMovie(id);
+	}
 }

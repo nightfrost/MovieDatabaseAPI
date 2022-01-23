@@ -1,0 +1,5 @@
+com.movies.moviedatabaseapi
+com.movies.moviedatabaseapi.controllers
+com.movies.moviedatabaseapi.models
+com.movies.moviedatabaseapi.repositories
+com.movies.moviedatabaseapi.services

@@ -7,6 +7,13 @@ import com.movies.moviedatabaseapi.models.*;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+	
+	/**
+	 * Returns boolean depending on email existence.
+	 * 
+	 * @param userEmail
+	 * @return boolean
+	 */
 	boolean existsByUserEmail(String userEmail);
 	
 	/**

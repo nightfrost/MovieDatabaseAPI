@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.movies.moviedatabaseapi.controllers"},{"l":"com.movies.moviedatabaseapi.models"},{"l":"com.movies.moviedatabaseapi.repositories"},{"l":"com.movies.moviedatabaseapi.services"}];updateSearchResults();
